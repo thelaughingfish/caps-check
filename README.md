@@ -1,2 +1,2 @@
 # caps-check
-Objective: Write a program that takes one command line argument and checks if there are any capital letters in the word
+Objective: To print the arguments with capital letters and then the number of capital words that were printed.
