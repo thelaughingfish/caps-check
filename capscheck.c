@@ -21,15 +21,20 @@ int main(int argc, char **argv) {
 	}
 
 	char value;
-	int i;
-	int stringLength = lengthdog(argv[1]);
+	int i, j;
+	//int j;
+	int stringLength;
 
-	for(i = 0;i<stringLength;i++){
-		value = argv[1][i];
+	for(j = 1;j<argc;j++){	//traverses the arguments
+		stringLength = lengthdog(argv[j]);	//counts the length of the string in an argument
 
-		if((value > 65) && (value < 90)){	//if ascii value is capital ascii, return "capital detected"
-			printf("Capital Detected\n");secret();
-			return 0;
+		for(i = 0;i<stringLength;i++){	//traverses the string in an argument
+			value = argv[j][i];			// = the char of argument 'j' at index 'i'
+
+			if((value >= 65) && (value <= 90)){	//if ascii value is capital ascii, return "capital detected"
+				printf("Capital Detected\n");secret();
+				return 0;
+			}
 		}
 	}
 	printf("No Capital Detected\n");
@@ -39,6 +44,7 @@ int lengthdog(char s[]){
 	int i = 0;
 
 	while(s[i] != '\0') {
+		//printf("%c\n", s[i]);
 		i++;
 	}
 
